@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    before_action :set_user, only: [:show, :update, :destroy]
+    before_action :set_user, only: [:show, :update, :destroy, :edit]
 
     # GET /users
     def index
@@ -30,6 +30,10 @@ class Api::V1::UsersController < ApplicationController
       @user.update(user_params)
       flash.notice = "The user record was created successfully."
       render json: @user , status: 200 # your code godes here
+    end
+
+    def edit 
+      
     end
   
     # DELETE /users/:id
